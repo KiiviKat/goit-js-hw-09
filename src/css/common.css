@@ -16,3 +16,37 @@ img {
   display: block;
   max-width: 100%;
 }
+
+#datetime-picker,
+button[data-start] {
+  border: 2px solid palevioletred;
+  border-radius: 5px;
+  padding: 5px;
+  font-size: 15px;
+}
+
+button[data-start] {
+  cursor: pointer;
+  background-color: rgba(250, 236, 246, 0.377);
+}
+
+.timer {
+  display: flex;
+  gap: 20px;
+  margin-top: 10px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 5px;
+  border: 2px solid palevioletred;
+  border-radius: 10px;
+  width: 75px;
+}
+
+.value {
+  font-weight: 500;
+  font-size: 20px;
+}
