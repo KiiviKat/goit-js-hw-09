@@ -11,6 +11,8 @@ const refs = {
   secEl: document.querySelector('[data-seconds]'),
 };
 
+let timerId;
+
 refs.startBtnEl.setAttribute('disabled', 'disabled');
 
 const options = {
@@ -37,9 +39,13 @@ function onStartBtnClick() {
   refs.startBtnEl.setAttribute('disabled', 'disabled');
   const startTime = dataPickr.selectedDates[0];
 
-  setInterval(() => {
+  timerId = setInterval(() => {
     const currentTime = Date.now();
     const deltaTime = startTime - currentTime;
+
+    if (deltaTime < 1000) {
+      clearInterval(timerId);
+    }
 
     const time = convertMs(deltaTime);
 
